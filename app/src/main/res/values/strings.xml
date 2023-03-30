@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Veto</string>
+    <string name="main_background_image">MainBackgroundImage</string>
+    <string name="inferno">INFERNO</string>
+    <string name="mirage">MIRAGE</string>
+    <string name="overpass">OVERPASS</string>
+    <string name="vertigo">VERTIGO</string>
+    <string name="nuke">NUKE</string>
+    <string name="ancient">ANCIENT</string>
+    <string name="anubis">ANUBIS</string>
+    <string name="reset">reset</string>
+    <string name="ic_clear">ic_clear</string>
+    <string name="clear">CLEAR</string>
+    <string name="ic_circle">circle</string>
+</resources>

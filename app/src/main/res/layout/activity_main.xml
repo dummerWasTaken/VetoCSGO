@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey1"
+    tools:context=".ui.MainActivity">
+
+
+    <ImageView
+        android:id="@+id/image_inferno"
+        android:layout_width="180dp"
+        android:layout_height="128dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:contentDescription="@string/inferno"
+        android:src="@drawable/inferno"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_inferno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/inferno"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@id/image_inferno"
+        app:layout_constraintEnd_toEndOf="@id/image_inferno"
+        app:layout_constraintStart_toStartOf="@id/image_inferno"
+        app:layout_constraintTop_toTopOf="@id/image_inferno" />
+
+    <ImageView
+        android:id="@+id/image_mirage"
+        android:layout_width="180dp"
+        android:layout_height="128dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:contentDescription="@string/mirage"
+        android:src="@drawable/mirage"
+        app:layout_constraintStart_toEndOf="@id/image_inferno"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_mirage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/mirage"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@id/image_mirage"
+        app:layout_constraintEnd_toEndOf="@id/image_mirage"
+        app:layout_constraintStart_toStartOf="@id/image_mirage"
+        app:layout_constraintTop_toTopOf="@id/image_mirage" />
+
+    <ImageView
+        android:id="@+id/image_overpass"
+        android:layout_width="180dp"
+        android:layout_height="128dp"
+        android:layout_marginStart="16dp"
+        android:contentDescription="@string/overpass"
+        android:src="@drawable/overpass"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image_inferno" />
+
+    <TextView
+        android:id="@+id/text_overpass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/overpass"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@id/image_overpass"
+        app:layout_constraintEnd_toEndOf="@id/image_overpass"
+        app:layout_constraintStart_toStartOf="@id/image_overpass"
+        app:layout_constraintTop_toTopOf="@id/image_overpass" />
+
+    <ImageView
+        android:id="@+id/image_vertigo"
+        android:layout_width="180dp"
+        android:layout_height="128dp"
+        android:layout_marginStart="16dp"
+        android:contentDescription="@string/vertigo"
+        android:src="@drawable/vertigo"
+        app:layout_constraintStart_toEndOf="@id/image_overpass"
+        app:layout_constraintTop_toBottomOf="@id/image_mirage" />
+
+    <TextView
+        android:id="@+id/text_vertigo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/vertigo"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@id/image_vertigo"
+        app:layout_constraintEnd_toEndOf="@id/image_vertigo"
+        app:layout_constraintStart_toStartOf="@id/image_vertigo"
+        app:layout_constraintTop_toTopOf="@id/image_vertigo" />
+
+    <ImageView
+        android:id="@+id/image_nuke"
+        android:layout_width="180dp"
+        android:layout_height="128dp"
+        android:layout_marginStart="16dp"
+        android:contentDescription="@string/nuke"
+        android:src="@drawable/nuke"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image_overpass" />
+
+    <TextView
+        android:id="@+id/text_nuke"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nuke"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@id/image_nuke"
+        app:layout_constraintEnd_toEndOf="@id/image_nuke"
+        app:layout_constraintStart_toStartOf="@id/image_nuke"
+        app:layout_constraintTop_toTopOf="@id/image_nuke" />
+
+    <ImageView
+        android:id="@+id/image_ancient"
+        android:layout_width="180dp"
+        android:layout_height="128dp"
+        android:layout_marginStart="16dp"
+        android:contentDescription="@string/ancient"
+        android:src="@drawable/ancient"
+        app:layout_constraintStart_toEndOf="@id/image_nuke"
+        app:layout_constraintTop_toBottomOf="@id/image_vertigo" />
+
+    <TextView
+        android:id="@+id/text_ancient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ancient"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@id/image_ancient"
+        app:layout_constraintEnd_toEndOf="@id/image_ancient"
+        app:layout_constraintStart_toStartOf="@id/image_ancient"
+        app:layout_constraintTop_toTopOf="@id/image_ancient" />
+
+    <ImageView
+        android:id="@+id/image_anubis"
+        android:layout_width="180dp"
+        android:layout_height="128dp"
+        android:layout_marginStart="16dp"
+        android:contentDescription="@string/anubis"
+        android:src="@drawable/anubis"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image_nuke" />
+
+    <TextView
+        android:id="@+id/text_anubis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/anubis"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@id/image_anubis"
+        app:layout_constraintEnd_toEndOf="@id/image_anubis"
+        app:layout_constraintStart_toStartOf="@id/image_anubis"
+        app:layout_constraintTop_toTopOf="@id/image_anubis" />
+
+
+    <ImageView
+        android:id="@+id/image_circle"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginBottom="32dp"
+        android:contentDescription="@string/ic_circle"
+        android:src="@drawable/ic_circle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:tint="@color/grey2" />
+
+    <ImageView
+        android:id="@+id/image_clear"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:contentDescription="@string/ic_clear"
+        android:src="@drawable/ic_clear"
+        app:layout_constraintBottom_toBottomOf="@id/image_circle"
+        app:layout_constraintEnd_toEndOf="@id/image_circle"
+        app:layout_constraintStart_toStartOf="@id/image_circle"
+        app:layout_constraintTop_toTopOf="@id/image_circle"
+        app:tint="@color/grey3" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
