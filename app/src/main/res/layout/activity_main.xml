@@ -7,7 +7,6 @@
     android:background="@color/grey1"
     tools:context=".ui.MainActivity">
 
-
     <ImageView
         android:id="@+id/image_inferno"
         android:layout_width="180dp"
@@ -165,9 +164,8 @@
         app:layout_constraintStart_toStartOf="@id/image_anubis"
         app:layout_constraintTop_toTopOf="@id/image_anubis" />
 
-
     <ImageView
-        android:id="@+id/image_circle"
+        android:id="@+id/image_circle_clear"
         android:layout_width="64dp"
         android:layout_height="64dp"
         android:layout_marginBottom="32dp"
@@ -176,19 +174,20 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:tint="@color/grey2" />
+        app:tint="@color/grey2"
+        tools:ignore="ImageContrastCheck" />
 
     <ImageView
-        android:id="@+id/image_clear"
+        android:id="@+id/image_x_clear"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:contentDescription="@string/ic_clear"
         android:src="@drawable/ic_clear"
-        app:layout_constraintBottom_toBottomOf="@id/image_circle"
-        app:layout_constraintEnd_toEndOf="@id/image_circle"
-        app:layout_constraintStart_toStartOf="@id/image_circle"
-        app:layout_constraintTop_toTopOf="@id/image_circle"
-        app:tint="@color/grey3" />
-
+        app:layout_constraintBottom_toBottomOf="@id/image_circle_clear"
+        app:layout_constraintEnd_toEndOf="@id/image_circle_clear"
+        app:layout_constraintStart_toStartOf="@id/image_circle_clear"
+        app:layout_constraintTop_toTopOf="@id/image_circle_clear"
+        app:tint="@color/grey3"
+        tools:ignore="ImageContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

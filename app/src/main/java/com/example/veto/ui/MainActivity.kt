@@ -8,8 +8,6 @@ primeiro sempre vai ser BAN
 
 	2ban > 2pick > 2ban
 
-	4 ban e 2 pick, encerra
-
 	o mapa que sobrar vai ser o "decider"
 
 ban -> deixa imagem preto e branco, mostra nome cor vermelha
@@ -18,9 +16,7 @@ pick -> mantem a cor da imagem, mostra nome cor verde
 
  */
 
-
 package com.example.veto.ui
-
 
 import android.graphics.ColorMatrix
 import android.graphics.ColorMatrixColorFilter
@@ -32,11 +28,15 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.veto.R
 import com.example.veto.databinding.ActivityMainBinding
 import com.example.veto.infra.VetoConstants
-
+import com.example.veto.models.MapItem
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var binding: ActivityMainBinding
+    private lateinit var arrayOfMaps: ArrayList<MapItem>
+
+    private var bannedMapSet: MutableSet<MapItem> = mutableSetOf()
+    private var pickedMapSet: MutableSet<MapItem> = mutableSetOf()
 
     private var vetoStage = VetoConstants.VETOSTAGE.BAN
 
@@ -47,8 +47,31 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setUpArrayOfMaps()
         setListeners()
     }
+
+    override fun onClick(view: View) {
+
+        val id: Int = view.id
+
+        pickOrBan(id)
+
+    }
+
+    private fun setUpArrayOfMaps() {
+        arrayOfMaps = arrayListOf(
+            MapItem(R.id.image_inferno, "inferno.jpg", "INFERNO", 0),
+            MapItem(R.id.image_mirage, "mirage.jpg", "MIRAGE", 0),
+            MapItem(R.id.image_overpass, "overpass.jpg", "OVERPASS", 0),
+            MapItem(R.id.image_vertigo, "vertigo.jpg", "VERTIGO", 0),
+            MapItem(R.id.image_nuke, "nuke.jpg", "NUKE", 0),
+            MapItem(R.id.image_ancient, "ancient.jpg", "ANCIENT", 0),
+            MapItem(R.id.image_anubis, "anubis.jpg", "ANUBIS", 0)
+
+        )
+    }
+
 
     private fun setListeners() {
         binding.imageAncient.setOnClickListener(this)
@@ -60,17 +83,64 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         binding.imageVertigo.setOnClickListener(this)
     }
 
-    override fun onClick(view: View) {
+    private fun updateMapItemStage(id: Int) {
 
-        val id: Int = view.id
+        val mapItemIndex = arrayOfMaps.indexOfFirst { it.id == id }
+        val mapItem = arrayOfMaps[mapItemIndex]
 
-        pickOrBan(id)
+        mapItem.stage = vetoStage
+
+        arrayOfMaps[mapItemIndex] = mapItem
+
+    }
+
+    private fun updateMapSet(id: Int) {
+
+        val mapItem = arrayOfMaps.first { it.id == id }
+
+        if (vetoStage == 1) {
+            bannedMapSet.add(mapItem)
+        }
+
+        if (vetoStage == 2) {
+            pickedMapSet.add(mapItem)
+        }
+
+    }
+
+    private fun checkMapSet() {
+
+        if (bannedMapSet.count() >= 4 && pickedMapSet.count() >= 2) {
+
+        }
+
+        if (bannedMapSet.count() >= 2 && pickedMapSet.count() >= 2) {
+            vetoStage = VetoConstants.VETOSTAGE.BAN
+            return
+        }
+
+        if (bannedMapSet.count() > 2) {
+            vetoStage = VetoConstants.VETOSTAGE.PICK
+            return
+        }
+
+        if (pickedMapSet.count() > 2) {
+            vetoStage = VetoConstants.VETOSTAGE.BAN
+            return
+        }
 
     }
 
     private fun pickOrBan(id: Int) {
+
+        updateMapItemStage(id)
+        updateMapSet(id)
+        checkMapSet()
+
         when (vetoStage) {
+
             VetoConstants.VETOSTAGE.PICK -> {
+
                 when (id) {
                     R.id.image_inferno -> {
 
@@ -121,7 +191,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 when (id) {
                     R.id.image_inferno -> {
 
-                        val imageView: ImageView = findViewById<View>(R.id.image_inferno) as ImageView
+                        val imageView: ImageView =
+                            findViewById<View>(R.id.image_inferno) as ImageView
                         val matrix = ColorMatrix()
                         matrix.setSaturation(0f)
 
@@ -135,7 +206,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
                     R.id.image_anubis -> {
 
-                        val imageview: ImageView = findViewById<View>(R.id.image_anubis) as ImageView
+                        val imageview: ImageView =
+                            findViewById<View>(R.id.image_anubis) as ImageView
                         val matrix = ColorMatrix()
                         matrix.setSaturation(0f)
 
@@ -148,7 +220,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
                     R.id.image_mirage -> {
 
-                        val imageview: ImageView = findViewById<View>(R.id.image_mirage) as ImageView
+                        val imageview: ImageView =
+                            findViewById<View>(R.id.image_mirage) as ImageView
                         val matrix = ColorMatrix()
                         matrix.setSaturation(0f)
 
@@ -174,7 +247,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
                     R.id.image_ancient -> {
 
-                        val imageview: ImageView = findViewById<View>(R.id.image_ancient) as ImageView
+                        val imageview: ImageView =
+                            findViewById<View>(R.id.image_ancient) as ImageView
                         val matrix = ColorMatrix()
                         matrix.setSaturation(0f)
 
@@ -187,7 +261,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
                     R.id.image_overpass -> {
 
-                        val imageview: ImageView = findViewById<View>(R.id.image_overpass) as ImageView
+                        val imageview: ImageView =
+                            findViewById<View>(R.id.image_overpass) as ImageView
                         val matrix = ColorMatrix()
                         matrix.setSaturation(0f)
 
@@ -200,7 +275,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
                     R.id.image_vertigo -> {
 
-                        val imageview: ImageView = findViewById<View>(R.id.image_vertigo) as ImageView
+                        val imageview: ImageView =
+                            findViewById<View>(R.id.image_vertigo) as ImageView
                         val matrix = ColorMatrix()
                         matrix.setSaturation(0f)
 
@@ -215,8 +291,5 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
         }
     }
+
 }
-
-
-
-
