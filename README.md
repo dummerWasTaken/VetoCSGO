@@ -2,18 +2,31 @@
 
 Picks&Bans app for CS:GO
 
-primeiro sempre vai ser BAN
+# EN:
+Using the idea of pick and ban from CS:GO competitive scene to study Kotlin.
 
-	quando tiver 2 ban, muda pra pick
+The app logic is:
 
-	quando tiver 2 pick, muda pra ban
+1- Start banning 2 maps, 1 for each team;
+2- Then, picking 2 maps, 1 for each team as well;
+3- Another 2 bans, 1 for each;
+4- Last map will be the "decider".
 
-	2ban > 2pick > 2ban
+Map pool consists of 7 maps known as the "active duty" and its decide by Valve:
+ Inferno, Mirage, Nuke, Overpass, Vertigo, Ancient and Anubis
+ 
+ ------------------------------------------------------------------------------
+ 
+ #PT-BR:
 
-	4 ban e 2 pick, encerra
+Usando a ideia de pick e ban da cena competitiva de CS:GO para estudar Kotlin.
 
-	o mapa que sobrar vai ser o "decider"
+A lógica do app é:
 
-ban -> deixa imagem preto e branco, mostra nome cor vermelha
+1- Começar banindo 2 mapas, 1 para cada time;
+2- Depois, "pickar" 2 mapas, 1 para cada time também;
+3- Outros 2 bans, 1 para cada time;
+4- O mapa que sobrar vai ser o "decider".
 
-pick -> mantem a cor da imagem, mostra nome cor verde
+O conjunto de mapas consiste em 7 mapas conhecidos como "active duty" e é decidido pela Valve:
+ Inferno, Mirage, Nuke, Overpass, Vertigo, Ancient e Anubis
