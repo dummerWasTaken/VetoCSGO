@@ -19,7 +19,7 @@ Map pool consists of 7 maps known as the "active duty" and its decide by Valve:
  
  # PT-BR:
 
-Usando a ideia de pick e ban da cena competitiva de CS:GO para estudar Kotlin.
+Usando a ideia de pick e ban do cenário competitivo de CS:GO para estudar Kotlin.
 
 A lógica do app é:
 
